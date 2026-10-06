@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jessy Lee — Product Designer with 8+ years in B2C and B2B. I turn complex business rules into designs that people understand at a glance.">
+<meta property="og:title" content="Jessy Lee · Product Designer">
+<meta property="og:description" content="8+ years in B2C & B2B product design. FunNow, BookFast, Taiwan Mobile.">
+<title>Jessy Lee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: a résumé sheet — fixed left rail (identity, contact, skills, education) beside a reading column of experience; a to-scale career strip ties the years together. */
+:root{
+  --paper:#f7f8f6; --sheet:#ffffff; --ink:#1b2321; --muted:#5d6966; --line:#dfe4e1;
+  --accent:#2e6b57; --accent-soft:#e3efe9; --mark:#c9dcd3;
+  --f-display:'Bricolage Grotesque','Noto Sans TC',system-ui,sans-serif;
+  --f-body:'IBM Plex Sans','Noto Sans TC',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,'Noto Sans TC',monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111614; --sheet:#171d1b; --ink:#e7ecea; --muted:#9aa7a2; --line:#2a3330;
+    --accent:#7cc4a8; --accent-soft:#1f2e28; --mark:#2f4a3f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111614; --sheet:#171d1b; --ink:#e7ecea; --muted:#9aa7a2; --line:#2a3330;
+  --accent:#7cc4a8; --accent-soft:#1f2e28; --mark:#2f4a3f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;margin:0;padding-inline:16px;padding-block:32px}
+html:not([data-lang="zh"]) [lang="zh-Hant"], html[data-lang="zh"] [lang="en"]{display:none!important}
+html[data-lang="zh"] body{font-family:'Noto Sans TC',var(--f-body);letter-spacing:.02em}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:1080px;margin:0 auto}
+.toolbar{display:flex;justify-content:flex-end;gap:12px;margin-bottom:16px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--sheet);padding:3px}
+.seg button{font:500 13px/1 var(--f-mono);color:var(--muted);background:none;border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.print{font:500 13px/1 var(--f-mono);color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer}
+
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:300px 1fr}
+.rail{padding:40px 32px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:32px}
+.main{padding:40px 44px;display:flex;flex-direction:column;gap:36px;min-width:0}
+
+.name{font-family:var(--f-display);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.02em;margin:0}
+.role{font-family:var(--f-display);font-weight:600;font-size:18px;margin:10px 0 0;color:var(--accent)}
+.years{font-family:var(--f-mono);font-size:13px;color:var(--muted);margin:6px 0 0}
+
+.label{font:500 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 12px}
+html[data-lang="zh"] .label{text-transform:none;letter-spacing:.08em;font-family:'Noto Sans TC',var(--f-mono);font-size:12px}
+.contact{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.contact span{color:var(--muted);font-family:var(--f-mono);font-size:12px;display:inline-block;width:72px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;border:1px solid var(--line);border-radius:4px;padding:3px 9px}
+.chip.top{background:var(--accent-soft);border-color:var(--mark)}
+.edu{display:flex;flex-direction:column;gap:14px;font-size:14px}
+.edu b{display:block;font-weight:600}
+.edu small{color:var(--muted);font-family:var(--f-mono);font-size:12px}
+
+h2{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
+html[data-lang="zh"] h2{font-family:'Noto Sans TC',var(--f-display);font-weight:900}
+.about p{margin:0 0 12px;max-width:65ch}
+.about .lead{font-size:18px;line-height:1.55;font-weight:500}
+.strengths{margin:6px 0 0;padding-left:18px;max-width:65ch}
+
+/* career strip, drawn to scale: 2013 → 2026 */
+.strip{margin-top:4px}
+.bar{position:relative;height:28px;border-radius:4px;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.seg-y{position:absolute;top:0;bottom:0;background:var(--mark);border-right:1px solid var(--sheet)}
+.seg-y.now{background:var(--accent)}
+.ticks{position:relative;height:18px;font:400 11px/1 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.ticks i{position:absolute;top:6px;transform:translateX(-50%);font-style:normal}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font:400 12px/1.4 var(--f-mono);color:var(--muted);margin-top:8px}
+.legend b{display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--mark);margin-right:5px;vertical-align:0}
+.legend .cur b{background:var(--accent)}
+
+.job{display:grid;grid-template-columns:150px 1fr;gap:6px 24px;padding-top:22px;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font:400 12.5px/1.5 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.job h3{font-family:var(--f-display);font-weight:600;font-size:18px;margin:0;line-height:1.3}
+html[data-lang="zh"] .job h3{font-family:'Noto Sans TC',var(--f-display);font-weight:700}
+.job h3 .co{color:var(--accent)}
+.intro{color:var(--muted);margin:4px 0 0;max-width:65ch}
+.group{font:500 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:16px 0 6px}
+html[data-lang="zh"] .group{text-transform:none;font-family:'Noto Sans TC',var(--f-mono);font-size:12.5px;letter-spacing:.05em}
+.job ul{margin:8px 0 0;padding-left:18px;max-width:68ch}
+.job li{margin:0 0 6px}
+.job li strong{font-weight:600}
+.num{background:var(--accent-soft);padding:0 4px;border-radius:3px;font-variant-numeric:tabular-nums}
+.pubs{margin:0;padding-left:18px;font-size:14px}
+.pubs li{margin-bottom:6px}
+.pubs small{color:var(--muted);font-family:var(--f-mono);font-size:12px}
+
+@media (max-width:820px){
+  .sheet{grid-template-columns:1fr}
+  .rail{border-right:0;border-bottom:1px solid var(--line);padding:28px 22px}
+  .main{padding:28px 22px}
+  .job{grid-template-columns:1fr}
+  .name{font-size:38px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .toolbar{display:none}
+  .sheet{border:0}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Language">
+      <button id="btn-en" type="button" data-set="en" aria-pressed="true">EN</button>
+      <button id="btn-zh" type="button" data-set="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+
+  <article class="sheet">
+    <aside class="rail">
+      <header>
+        <h1 class="name">Jessy Lee</h1>
+        <p class="role"><span lang="en">Product Designer</span><span lang="zh-Hant">產品設計師 李奕潔</span></p>
+        <p class="years"><span lang="en">8+ years · B2C &amp; B2B · Taipei</span><span lang="zh-Hant">8 年以上 · B2C 與 B2B · 台北</span></p>
+      </header>
+
+      <section>
+        <p class="label"><span lang="en">Contact</span><span lang="zh-Hant">聯絡方式</span></p>
+        <ul class="contact">
+          <li><span>Email</span>jessylee2208@gmail.com</li>
+          <li><span>Portfolio</span><a href="https://jessylee.notion.site/Hi-I-m-Jessy-Lee-16b82be301554616af370ae419074df3" target="_blank" rel="noopener">jessylee.notion.site</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jessy-lee-2208/" target="_blank" rel="noopener">in/jessy-lee-2208</a></li>
+          <li><span>GitHub</span><a href="https://github.com/JessyLee2208" target="_blank" rel="noopener">JessyLee2208</a></li>
+          <li><span>Medium</span><a href="https://medium.com/@jessylee2208" target="_blank" rel="noopener">@jessylee2208</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="label"><span lang="en">Skills</span><span lang="zh-Hant">技能</span></p>
+        <div class="chips" lang="en">
+          <span class="chip top">Product Design</span><span class="chip top">UX Research</span><span class="chip top">Information Architecture</span><span class="chip top">Design Systems</span><span class="chip top">Figma</span>
+          <span class="chip">Interaction Design</span><span class="chip">Prototyping</span><span class="chip">Data Analysis (Mixpanel, Metabase)</span><span class="chip">B2B Product Design</span><span class="chip">AI-assisted Design</span><span class="chip">React</span>
+        </div>
+        <div class="chips" lang="zh-Hant">
+          <span class="chip top">產品設計</span><span class="chip top">使用者經驗研究</span><span class="chip top">資訊架構</span><span class="chip top">設計系統</span><span class="chip top">Figma</span>
+          <span class="chip">互動設計</span><span class="chip">原型設計</span><span class="chip">數據分析（Mixpanel、Metabase）</span><span class="chip">B2B 產品設計</span><span class="chip">AI 輔助設計</span><span class="chip">React</span>
+        </div>
+      </section>
+
+      <section>
+        <p class="label"><span lang="en">Education</span><span lang="zh-Hant">學歷</span></p>
+        <div class="edu">
+          <div><b><span lang="en">Kookmin University, Korea</span><span lang="zh-Hant">韓國國民大學</span></b><span lang="en">Master's, Interaction Design</span><span lang="zh-Hant">互動設計碩士</span><br><small>2017 – 2019</small></div>
+          <div><b><span lang="en">Ming Chi University of Technology</span><span lang="zh-Hant">明志科技大學</span></b><span lang="en">Bachelor's, Industrial Design</span><span lang="zh-Hant">工業設計系學士</span><br><small>2009 – 2013</small></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="label"><span lang="en">Publications</span><span lang="zh-Hant">論文</span></p>
+        <ol class="pubs">
+          <li><span lang="en">A Study of Application Information Architecture for Navigation on User Experience</span><span lang="zh-Hant">App 導覽資訊架構對使用者經驗之研究</span><br><small>KSBDA · 2018</small></li>
+          <li><span lang="en">A Study of Interaction and Transformation Effect for Hierarchy Perception in Application</span><span lang="zh-Hant">App 層級感知之互動與轉場效果研究</span><br><small>KSBDA · 2019</small></li>
+        </ol>
+      </section>
+
+      <section>
+        <p class="label"><span lang="en">Languages</span><span lang="zh-Hant">語言</span></p>
+        <p style="margin:0;font-size:14px"><span lang="en">Mandarin (native) · Korean · English</span><span lang="zh-Hant">中文（母語）· 韓文 · 英文</span></p>
+      </section>
+    </aside>
+
+    <div class="main">
+      <section class="about">
+        <h2><span lang="en">About</span><span lang="zh-Hant">關於我</span></h2>
+        <p class="lead"><span lang="en">I turn complex business rules into designs that people understand at a glance.</span><span lang="zh-Hant">把複雜的規則，變成用戶一眼看得懂的設計。</span></p>
+        <p><span lang="en">At FunNow, a real-time booking platform, I have designed for both sides of the marketplace: the app and website where users book restaurants, spas and more, and the back-office tool where merchants manage time slots and stock. My work covers 3 brands (FunNow, Eatigo, Niceday) and 3 platforms (iOS, Android, Web).</span><span lang="zh-Hant">在即時預訂平台 FunNow，我設計過市集的兩端：消費者預訂餐廳、按摩 SPA 等服務的 App 與網站，以及店家管理時段與庫存的後台。工作範圍橫跨 FunNow、Eatigo、Niceday 三個品牌，以及 iOS、Android、Web 三個平台。</span></p>
+        <ul class="strengths">
+          <li><span lang="en">Start from user research and data, then build a clear information architecture</span><span lang="zh-Hant">從用戶研究和數據出發，整理出清楚的資訊架構</span></li>
+          <li><span lang="en">Work closely with PMs and engineers, from rules and specs to design QA</span><span lang="zh-Hant">和 PM、工程師緊密合作，從規則、規格一路到 Design QA</span></li>
+          <li><span lang="en">Use AI in my design workflow, while people still make the final call</span><span lang="zh-Hant">把 AI 放進設計流程，但最後的判斷仍由人來做</span></li>
+          <li><span lang="en">Read and write front-end code (React), so I can talk with engineers in their language</span><span lang="zh-Hant">能讀寫前端程式（React），和工程師溝通時能用他們的語言對話</span></li>
+        </ul>
+      </section>
+
+      <section class="strip" aria-label="Career timeline">
+        <p class="label"><span lang="en">Career timeline · 2016 – 2026</span><span lang="zh-Hant">職涯時間軸 · 2016 – 2026</span></p>
+        <div class="bar" id="bar"></div>
+        <div class="ticks" id="ticks"></div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section>
+        <h2><span lang="en">Experience</span><span lang="zh-Hant">工作經歷</span></h2>
+
+        <div class="job">
+          <div class="when"><span lang="en">Feb 2023 – Present<br>Taipei · Hybrid</span><span lang="zh-Hant">2023.02 – 現在<br>台北 · 混合辦公</span></div>
+          <div>
+            <h3><span lang="en">Product Designer</span><span lang="zh-Hant">產品設計師</span> · <span class="co">FunNow</span></h3>
+            <p class="intro"><span lang="en">A real-time booking platform for restaurants, bars, spas, hotels and more. I have worked on both the consumer side (B2C) and the merchant and internal side (B2B).</span><span lang="zh-Hant">即時預訂平台，涵蓋餐廳、酒吧、按摩 SPA、住宿等服務。我同時做過消費者端（B2C）與店家、內部後台端（B2B）的設計。</span></p>
+            <p class="group"><span lang="en">Consumer side · B2C</span><span lang="zh-Hant">消費者端（B2C）</span></p>
+            <ul>
+              <li><span lang="en">Designed the main booking journey for consumers, from search and store pages to product pages and checkout, across iOS, Android and Web.</span><span lang="zh-Hant">設計消費者的主要預訂流程，從搜尋、分店頁、方案頁到結帳，涵蓋 iOS、Android 與 Web。</span></li>
+              <li><span lang="en">Turned user research and data into design decisions, from user interviews to funnel analysis.</span><span lang="zh-Hant">把用戶研究和數據轉成設計決策，從用戶訪談到轉換漏斗分析。</span></li>
+              <li><span lang="en">Made deals and member rewards easy to understand, so users know what they get before they book.</span><span lang="zh-Hant">讓優惠與會員回饋變得好懂，用戶在預訂前就知道自己能拿到什麼。</span></li>
+              <li><span lang="en">Designed AI-powered features that help users judge a place faster.</span><span lang="zh-Hant">設計 AI 功能，幫助用戶更快判斷一家店適不適合自己。</span></li>
+              <li><span lang="en">Kept the experience consistent across 3 brands, while fitting each brand's market and needs.</span><span lang="zh-Hant">讓三個品牌的體驗保持一致，同時兼顧各品牌的市場與需求。</span></li>
+              <li><span lang="en"><strong>Redesigned the store page</strong> as one layout shared by 8 industries, so users can decide on a store without leaving the page. After launch, the checkout rate from the product page went up <span class="num">2.9 percentage points</span>.</span><span lang="zh-Hant"><strong>重新設計分店頁</strong>，讓八個產業共用同一套版面，用戶不用離開頁面就能決定要不要選這家店。上線後，進到方案頁的人進入結帳的比例提高 <span class="num">2.9 個百分點</span>。</span></li>
+            </ul>
+            <p class="group"><span lang="en">Merchant &amp; internal tools · B2B</span><span lang="zh-Hant">店家與內部工具（B2B）</span></p>
+            <ul>
+              <li><span lang="en"><strong>Redesigned the merchant time-slot tool.</strong> Wrote the stock logic so a sold-out flash sale no longer blocks regular bookings, and made sold and available counts visible at a glance.</span><span lang="zh-Hant"><strong>改版店家後台的時段設定。</strong>寫出新的庫存計算邏輯，讓限時促銷賣完後不再擋住一般預訂，並讓已售與可售數量一眼看得到。</span></li>
+              <li><span lang="en">After the Eatigo acquisition, merged the two platforms' discount pricing logic for time slots into one.</span><span lang="zh-Hant">Eatigo 收購後，整併兩個平台的時段特價計算邏輯。</span></li>
+              <li><span lang="en">Designed and integrated the onboarding flow of the internal admin tool.</span><span lang="zh-Hant">設計並整合內部後台的 onboarding 流程。</span></li>
+            </ul>
+            <p class="group"><span lang="en">Design process</span><span lang="zh-Hant">設計流程</span></p>
+            <ul>
+              <li><span lang="en"><strong>Started an AI-assisted spec review before handoff.</strong> In the first round it found about <span class="num">36 open issues per spec</span> on average, and caught a rule that would have hidden almost <span class="num">50,000 coupons</span>.</span><span lang="zh-Hant"><strong>發起交稿前的 AI 規格審查。</strong>第一輪平均每份規格找出約 <span class="num">36 個待確認的地方</span>，其中一條攔下了近 <span class="num">5 萬張優惠券</span>被誤濾。</span></li>
+              <li><span lang="en">Interviewed backend, web and app engineers to improve how specs are written and handed off.</span><span lang="zh-Hant">訪談後端、Web 與 App 工程師，改善規格的寫法與交付方式。</span></li>
+              <li><span lang="en">Helped build a cross-brand design component library.</span><span lang="zh-Hant">參與建立跨品牌的設計元件庫。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when"><span lang="en">Oct 2021 – Dec 2022<br>Taipei</span><span lang="zh-Hant">2021.10 – 2022.12<br>台北</span></div>
+          <div>
+            <h3><span lang="en">Senior Product Designer</span><span lang="zh-Hant">資深產品設計師</span> · <span class="co">BookFast</span></h3>
+            <p class="intro"><span lang="en">A booking and management SaaS for gyms and sports studios in Taiwan. I designed for both the business side (B2B) and the member side (B2C).</span><span lang="zh-Hant">台灣運動產業的預約與管理 SaaS，服務健身房與運動教室。我同時負責店家端（B2B）與會員端（B2C）的設計。</span></p>
+            <ul>
+              <li><span lang="en">Designed a new time-based and visit-based pass feature, end to end: pricing and usage rules, how payments are charged, and every screen and case the feature needed.</span><span lang="zh-Hant">設計新的「計時計次」功能：費率與使用規則、金流扣款方式，以及這個功能需要的所有畫面與情境。</span></li>
+              <li><span lang="en">Planned a transfer feature so members can pass unused classes or memberships to someone else, including the screens and the full transfer flow.</span><span lang="zh-Hant">規劃轉讓功能，讓會員可以把用不完的課程或會籍轉給別人，包含轉讓的畫面與完整流程。</span></li>
+              <li><span lang="en">Interviewed gym and studio owners to understand their needs.</span><span lang="zh-Hant">訪談健身房與運動教室的店家，探索他們的需求。</span></li>
+              <li><span lang="en">Rebuilt BookFast's design system to make design and development more consistent.</span><span lang="zh-Hant">重新整理 BookFast 的設計系統，讓設計與開發更一致。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when"><span lang="en">Nov 2019 – Oct 2021<br>Taipei</span><span lang="zh-Hant">2019.11 – 2021.10<br>台北</span></div>
+          <div>
+            <h3><span lang="en">UI/UX Designer</span><span lang="zh-Hant">UI/UX 設計師</span> · <span class="co"><span lang="en">Taiwan Mobile</span><span lang="zh-Hant">台灣大哥大</span></span></h3>
+            <p class="intro"><span lang="en">Designed for Taiwan Mobile's video, music and account products.</span><span lang="zh-Hant">負責台灣大哥大影音、音樂與帳號相關產品的設計。</span></p>
+            <ul>
+              <li><span lang="en"><strong>OneID account integration:</strong> led the full UX process, from competitive analysis, surveys and user interviews to high-fidelity prototypes, usability tests and the research report.</span><span lang="zh-Hant"><strong>OneID 帳號整合：</strong>主導完整 UX 流程，從競品分析、問卷、用戶訪談，到高擬真原型、易用性測試與研究報告。</span></li>
+              <li><span lang="en"><strong>MyMusic Podcast (web &amp; app):</strong> owned UX and UI, including usability testing, visual style and a component library.</span><span lang="zh-Hant"><strong>MyMusic Podcast（Web 與 App）：</strong>負責 UX 與 UI，包含易用性測試、視覺風格與元件庫。</span></li>
+              <li><span lang="en"><strong>myVideo:</strong> improved the video player and planned the ranking page. Redesigned the member center end to end, from UX research to the UI details.</span><span lang="zh-Hant"><strong>myVideo：</strong>優化播放器、規劃排行榜頁；會員中心改版從 UX 研究到 UI 細節都由我負責。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when"><span lang="en">Feb 2021 – Jul 2021<br>Taipei</span><span lang="zh-Hant">2021.02 – 2021.07<br>台北</span></div>
+          <div>
+            <h3><span lang="en">Front-End Developer Trainee</span><span lang="zh-Hant">前端工程師培訓生</span> · <span class="co">AppWorks School</span></h3>
+            <ul>
+              <li><span lang="en">Selected from 300+ applicants (about 10% acceptance rate) for a full-time front-end program.</span><span lang="zh-Hant">從 300 多位申請者中錄取（錄取率約 10%），參加全職前端培訓。</span></li>
+              <li><span lang="en">Built an e-commerce website (STYLiSH) on my own in 4 weeks, and a personal project (MapPlus) with React and Redux in 5 weeks.</span><span lang="zh-Hant">4 週內獨立完成電商網站 STYLiSH；5 週內用 React 與 Redux 完成個人專案 MapPlus。</span></li>
+              <li><span lang="en">Worked with 6 iOS and back-end trainees to build a cross-platform app.</span><span lang="zh-Hant">與 6 位 iOS、後端培訓生合作開發跨平台 App。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when"><span lang="en">2018 – 2019<br>Seoul, Korea</span><span lang="zh-Hant">2018 – 2019<br>韓國首爾</span></div>
+          <div>
+            <h3><span lang="en">UX Planner</span><span lang="zh-Hant">UX 企劃</span> · <span class="co">Dilussion</span></h3>
+            <ul>
+              <li><span lang="en">Samsung Galaxy S10 launch event in London: event UX plan, proposal and app specs.</span><span lang="zh-Hant">三星 Galaxy S10 倫敦上市發表會：活動 UX 規劃、提案與 App 規格文件。</span></li>
+              <li><span lang="en">Hyundai Motor: in-store app UX for Hyundai robots, and the experience proposal for CES 2020.</span><span lang="zh-Hant">現代汽車：現代機器人店面體驗 App 的 UX 設計，以及 CES 2020 展場體驗提案。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when"><span lang="en">Mar 2016 – Mar 2018<br>Seoul, Korea · Part-time</span><span lang="zh-Hant">2016.03 – 2018.03<br>韓國首爾 · 兼職</span></div>
+          <div>
+            <h3><span lang="en">UI Designer</span><span lang="zh-Hant">UI 設計師</span> · <span class="co">DCK Consulting</span></h3>
+            <ul>
+              <li><span lang="en">Owned the product design of the Gouriter app: visual style, UI guidelines, app flows, icons and marketing materials.</span><span lang="zh-Hant">負責 Gouriter App 的產品設計：視覺風格、UI 規範、App 流程、圖示與行銷素材。</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </article>
+</div>
+
+<script>
+(function(){
+  // Career strip — positions computed from real dates on one scale (2016.0 → 2027.0)
+  var START=2016, END=2027, span=END-START;
+  var roles=[
+        {en:'DCK (part-time)',zh:'DCK（兼職）',a:2016+2/12,b:2018+2/12},
+    {en:'Kookmin MA',zh:'國民大學碩士',a:2017+8/12,b:2019+1/12,edu:true},
+    {en:'Dilussion',zh:'Dilussion',a:2018,b:2019+7/12},
+    {en:'Taiwan Mobile',zh:'台灣大哥大',a:2019+10/12,b:2021+9/12},
+    {en:'BookFast',zh:'BookFast',a:2021+9/12,b:2022+11/12},
+    {en:'FunNow',zh:'FunNow',a:2023+1/12,b:2026+10/12,now:true}
+  ];
+  var bar=document.getElementById('bar'), ticks=document.getElementById('ticks'), legend=document.getElementById('legend');
+  roles.filter(function(r){return !r.edu;}).forEach(function(r){
+    var d=document.createElement('div'); d.className='seg-y'+(r.now?' now':'');
+    d.style.left=((r.a-START)/span*100)+'%'; d.style.width=((r.b-r.a)/span*100)+'%';
+    d.title=r.en; bar.appendChild(d);
+  });
+  for(var y=START;y<=END;y+=2){var t=document.createElement('i');t.textContent=y;t.style.left=((y-START)/span*100)+'%';if(y===START)t.style.transform='none';if(y===END)t.style.transform='translateX(-100%)';ticks.appendChild(t);}
+  roles.filter(function(r){return !r.edu;}).forEach(function(r){
+    var s=document.createElement('span'); if(r.now) s.className='cur';
+    s.innerHTML='<b></b><span lang="en">'+r.en+'</span><span lang="zh-Hant">'+r.zh+'</span>';
+    legend.appendChild(s);
+  });
+
+  // Language toggle (remembered per viewer when storage is available)
+  var root=document.documentElement;
+  function setLang(l){
+    root.setAttribute('data-lang',l);
+    document.getElementById('btn-en').setAttribute('aria-pressed',l==='en');
+    document.getElementById('btn-zh').setAttribute('aria-pressed',l==='zh');
+    try{localStorage.setItem('resume-lang',l);}catch(e){}
+  }
+  var saved='en'; try{saved=localStorage.getItem('resume-lang')||'en';}catch(e){}
+  setLang(saved==='zh'?'zh':'en');
+  document.querySelectorAll('[data-set]').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-set'));});});
+})();
+</script>
+
+</body>
+</html>
